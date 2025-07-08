@@ -42,6 +42,14 @@ const AuthSchema = new Schema({
         trim: true
     }
     ,
+    resetPasswordOTP: {
+        type: String,
+        default: null
+    },
+    resetPasswordOTPExpires: {
+        type: Date,
+        default: null
+    },
     createdAt: {
         type: Date,
         default: Date.now
