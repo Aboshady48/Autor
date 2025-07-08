@@ -62,6 +62,7 @@ const registerController = async (req, res) => {
     const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
       expiresIn: "1y",
     });
+    
 
     // Set token cookie
     res.cookie("token", token, {
@@ -69,6 +70,7 @@ const registerController = async (req, res) => {
       secure: false,
       maxAge: 365 * 24 * 60 * 60 * 1000, // 1 year in milliseconds
     });
+
 
         // Return the user data and token
     res.status(201).json({

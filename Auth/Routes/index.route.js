@@ -1,12 +1,12 @@
 const express = require('express');
 const Authrouter = express.Router();
 const registerController = require('../Controllers/register.controller');
+const loginController = require('../Controllers/login.controller');
 
 
 Authrouter.post('/register', registerController)
 
-Authrouter.post('/login', async (req, res) => {
-})
+Authrouter.post('/login', loginController);
 
 Authrouter.post("/logout", async (req, res) => {});
 
