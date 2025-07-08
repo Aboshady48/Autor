@@ -5,7 +5,7 @@ const connectDB = require('./Config/db');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const authRouter = require("./Routes/index.route");
-// const UserRouter = require("./Users/index.route");
+const UserRouter = require("./Users/Routes/index.route.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,7 +21,7 @@ connectDB();
 
 // Routes
 app.use('/api/auth',authRouter)
-// app.use('/api/users', UserRouter);
+app.use('/api/users', UserRouter);
 
 // Start Server
 app.listen(port, () => {
