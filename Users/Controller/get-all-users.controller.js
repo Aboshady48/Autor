@@ -13,6 +13,7 @@ const getAllUsersController = async (req, res) => {
         // Return the list of users
         return res.status(200).json(users);
     } catch (error) {
+        // Log the error and return a 500 status code
         console.error("Error fetching users:", error);
         return res.status(500).json({ message: "Internal server error" });
         
