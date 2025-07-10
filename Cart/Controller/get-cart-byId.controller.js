@@ -1,22 +1,26 @@
+const mongoose = require('mongoose');
 const Cart = require('../../Models/CartDb.js');
-const Product = require('../../Models/ProductDb.js');
-const Auth = require('../../Models/AuthDb.js');
 
-const getCartByIdController = async()=>{
-    try {
-        // Get the productId from the request parameters
-        const { productId } = req.params;
-        // Find the cart by productId
-        const cart = await Cart.findOne({ productId });
-        // If the cart is not found, return a 404 status
-        if (!cart) {
-            return res.status(404).json({ message: "Cart not found" });
-        }
-        // Return the cart
-        return res.status(200).json(cart);
-    } catch (error) {
-        return error;
+const getCartByIdController = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ message: "Invalid userId format" });
     }
-}
 
-module.exports = getCartByIdController
+    const cart = await Cart.findOne({ userId });
+
+    if (!cart) {
+      return res.status(404).json({ message: "Cart not found" });
+    }
+
+    return res.status(200).json(cart);
+
+  } catch (error) {
+    console.error("Error getting cart:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+module.exports = getCartByIdController;
