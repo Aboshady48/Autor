@@ -8,6 +8,7 @@ const authRouter = require("./Routes/index.route");
 const UserRouter = require("./Users/Routes/index.route.js");
 const productRouter = require("./Product/Routes/index.route.js");
 const CartRouter = require("./Cart/Routes/index.route.js");
+const orderRouter = require("./Order/Router/index.route.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -26,6 +27,7 @@ app.use('/api/auth',authRouter)
 app.use('/api/users', UserRouter);
 app.use('/api/products', productRouter);
 app.use('/api/cart', CartRouter);
+app.use('/api/order',orderRouter)
 
 // Start Server
 app.listen(port, () => {

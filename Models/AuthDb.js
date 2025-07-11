@@ -50,6 +50,11 @@ const AuthSchema = new Schema({
         type: Date,
         default: null
     },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    }
+    ,
     createdAt: {
         type: Date,
         default: Date.now
