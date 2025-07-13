@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <link href="/css/tailwind.css" rel="stylesheet" />
+  </head>
+  <body class="h-full flex items-center justify-center">
+    <div class="max-w-md w-full bg-white p-8 rounded shadow">
+      <h2 class="text-2xl font-bold mb-6 text-center">Register</h2>
+      <form action="/api/auth/register" method="POST" class="space-y-4">
+        <input name="name" type="text" placeholder="Name" required class="w-full border p-2 rounded" />
+        <input name="email" type="email" placeholder="Email" required class="w-full border p-2 rounded" />
+        <input name="password" type="password" placeholder="Password" required class="w-full border p-2 rounded" />
+        <input name="age" type="number" placeholder="Age" required class="w-full border p-2 rounded" />
+        <input name="gender" type="text" placeholder="Gender" required class="w-full border p-2 rounded" />
+        <input name="phone" type="text" placeholder="Phone" required class="w-full border p-2 rounded" />
+        <input name="address" type="text" placeholder="Address" required class="w-full border p-2 rounded" />
+        <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Register</button>
+      </form>
+      <p class="mt-4 text-center text-sm">Already have an account? <a href="/login" class="text-blue-600">Login</a></p>
+    </div>
+  </body>
+</html>
