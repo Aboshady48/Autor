@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import "../Style/Auth/form.css"; // reuse same styles
 
 export const UpdatePassword = () => {
   const [userId, setUserId] = useState("");

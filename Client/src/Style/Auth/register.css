@@ -65,3 +65,16 @@ body {
   color: red;
 }
 
+.register-container p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.register-container a {
+  color: var(--color-highlight);
+  text-decoration: none;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}
