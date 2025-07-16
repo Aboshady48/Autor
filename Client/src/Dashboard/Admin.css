@@ -1,0 +1,100 @@
+:root {
+  --color-bg: #FDEEDC;
+  --color-primary: #FFD8A9;
+  --color-accent: #F1A661;
+  --color-highlight: #E38B29;
+  --color-text: #333;
+  --color-white: #fff;
+}
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-bg);
+  font-family: Arial, sans-serif;
+  color: var(--color-text);
+}
+
+.admin-sidebar {
+  width: 220px;
+  background: var(--color-primary);
+  padding: 20px;
+  border-right: 2px solid var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+.admin-sidebar button {
+  background: var(--color-accent);
+  border: none;
+  padding: 10px;
+  color: var(--color-white);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.admin-sidebar button:last-child {
+  background: var(--color-highlight);
+}
+
+.admin-main {
+  flex: 1;
+  padding: 30px;
+}
+
+.admin-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-delete-btn {
+  background: var(--color-highlight);
+  border: none;
+  padding: 8px 12px;
+  color: var(--color-white);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.admin-input-group {
+  margin-bottom: 12px;
+}
+
+.admin-input-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.admin-input-group input {
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+}
+
+.admin-create-btn {
+  background: var(--color-highlight);
+  border: none;
+  padding: 10px 20px;
+  color: var(--color-white);
+  cursor: pointer;
+  border-radius: 5px;
+}
